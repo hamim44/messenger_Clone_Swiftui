@@ -11,6 +11,7 @@
 		929ACD1E2C80F2AB00A5A74D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929ACD1D2C80F2AB00A5A74D /* ContentView.swift */; };
 		929ACD202C80F2AC00A5A74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929ACD1F2C80F2AC00A5A74D /* Assets.xcassets */; };
 		929ACD232C80F2AC00A5A74D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929ACD222C80F2AC00A5A74D /* Preview Assets.xcassets */; };
+		929ACD322C80F57900A5A74D /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929ACD312C80F57900A5A74D /* LogInView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		929ACD1D2C80F2AB00A5A74D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		929ACD1F2C80F2AC00A5A74D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		929ACD222C80F2AC00A5A74D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		929ACD312C80F57900A5A74D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +38,7 @@
 			isa = PBXGroup;
 			children = (
 				929ACD1A2C80F2AB00A5A74D /* Messenger_Clone */,
+				929ACD1F2C80F2AC00A5A74D /* Assets.xcassets */,
 				929ACD192C80F2AB00A5A74D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -51,10 +54,13 @@
 		929ACD1A2C80F2AB00A5A74D /* Messenger_Clone */ = {
 			isa = PBXGroup;
 			children = (
-				929ACD1B2C80F2AB00A5A74D /* Messenger_CloneApp.swift */,
-				929ACD1D2C80F2AB00A5A74D /* ContentView.swift */,
-				929ACD1F2C80F2AC00A5A74D /* Assets.xcassets */,
+				929ACD2D2C80F4B300A5A74D /* App */,
+				929ACD2C2C80F4B100A5A74D /* Core */,
+				929ACD2A2C80F4AD00A5A74D /* Extensions */,
+				929ACD292C80F4AB00A5A74D /* Model */,
+				929ACD2E2C80F4E900A5A74D /* New Group */,
 				929ACD212C80F2AC00A5A74D /* Preview Content */,
+				929ACD2B2C80F4B000A5A74D /* Service */,
 			);
 			path = Messenger_Clone;
 			sourceTree = "<group>";
@@ -65,6 +71,75 @@
 				929ACD222C80F2AC00A5A74D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		929ACD292C80F4AB00A5A74D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		929ACD2A2C80F4AD00A5A74D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		929ACD2B2C80F4B000A5A74D /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		929ACD2C2C80F4B100A5A74D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD2F2C80F51B00A5A74D /* Authentication */,
+				929ACD302C80F52D00A5A74D /* Root */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		929ACD2D2C80F4B300A5A74D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD1B2C80F2AB00A5A74D /* Messenger_CloneApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		929ACD2E2C80F4E900A5A74D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		929ACD2F2C80F51B00A5A74D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD332C80F57C00A5A74D /* View */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		929ACD302C80F52D00A5A74D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD1D2C80F2AB00A5A74D /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		929ACD332C80F57C00A5A74D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD312C80F57900A5A74D /* LogInView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				929ACD322C80F57900A5A74D /* LogInView.swift in Sources */,
 				929ACD1E2C80F2AB00A5A74D /* ContentView.swift in Sources */,
 				929ACD1C2C80F2AB00A5A74D /* Messenger_CloneApp.swift in Sources */,
 			);
