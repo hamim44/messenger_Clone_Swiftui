@@ -12,7 +12,6 @@ struct LogInView: View {
     @State private var password = ""
     var body: some View {
         NavigationStack {
-            
             VStack {
                 Spacer()
                 Image("messenger-logo")
@@ -51,7 +50,7 @@ struct LogInView: View {
                 .frame(maxWidth: .infinity,alignment: .trailing)
                 
                 Button {
-                   print("Log in")
+                   InboxView()
                 } label: {
                     Text("Log in")
                         .font(.subheadline)
