@@ -13,6 +13,7 @@
 		92210E6F2C81DD970069346A /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92210E6E2C81DD970069346A /* NewMessageView.swift */; };
 		92210E742C8200F10069346A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92210E732C8200F10069346A /* ProfileView.swift */; };
 		92210E762C8207450069346A /* SettingOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92210E752C8207450069346A /* SettingOptionViewModel.swift */; };
+		92210E782C8211610069346A /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92210E772C8211610069346A /* ProfileViewModel.swift */; };
 		929ACD1C2C80F2AB00A5A74D /* Messenger_CloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929ACD1B2C80F2AB00A5A74D /* Messenger_CloneApp.swift */; };
 		929ACD1E2C80F2AB00A5A74D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929ACD1D2C80F2AB00A5A74D /* ContentView.swift */; };
 		929ACD202C80F2AC00A5A74D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 929ACD1F2C80F2AC00A5A74D /* Assets.xcassets */; };
@@ -28,6 +29,7 @@
 		92210E6E2C81DD970069346A /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		92210E732C8200F10069346A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		92210E752C8207450069346A /* SettingOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionViewModel.swift; sourceTree = "<group>"; };
+		92210E772C8211610069346A /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		929ACD182C80F2AB00A5A74D /* Messenger_Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Messenger_Clone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		929ACD1B2C80F2AB00A5A74D /* Messenger_CloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messenger_CloneApp.swift; sourceTree = "<group>"; };
 		929ACD1D2C80F2AB00A5A74D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				92210E752C8207450069346A /* SettingOptionViewModel.swift */,
+				92210E772C8211610069346A /* ProfileViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				929ACD322C80F57900A5A74D /* LogInView.swift in Sources */,
 				929ACD1E2C80F2AB00A5A74D /* ContentView.swift in Sources */,
 				92210E6A2C81A0910069346A /* ActiveNow.swift in Sources */,
+				92210E782C8211610069346A /* ProfileViewModel.swift in Sources */,
 				92210E672C819DCF0069346A /* InboxView.swift in Sources */,
 				929ACD1C2C80F2AB00A5A74D /* Messenger_CloneApp.swift in Sources */,
 				92D1F1A52C810A1900D7845D /* RegistrationView.swift in Sources */,
