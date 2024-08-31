@@ -9,10 +9,12 @@ import SwiftUI
 
 struct InboxView: View {
     @State private var showNewMessageView = false
+    @State private var user = User.MockUser
     var body: some View {
         NavigationStack {
             ScrollView {
                 ActiveNow()
+                    .navigationBarTitleDisplayMode(.inline)
                 
                 List {
                     ForEach(0...20,id: \.self) {
@@ -23,23 +25,24 @@ struct InboxView: View {
                 .listStyle(PlainListStyle())
                 .frame(height: UIScreen.main.bounds.height - 120)
             }
+            .navigationDestination(for: User.self, destination: { user in
+                ProfileView(user: user)
+            })
             .fullScreenCover(isPresented: $showNewMessageView, content: {
                 NewMessageView()
             })
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
-                    HStack {
-                        Image(systemName: "person.circle.fill")
-                            .resizable()
-                            .frame(width: 32, height: 32)
-                            .foregroundStyle(Color(.systemGray2))
+                    HStack(spacing: 4) {
+                        NavigationLink(value: user) {
+                            CircularprofileView(user: user, size: .xSmall)
+                        }
                         
                         Text("Chats")
                             .font(.title)
                             .fontWeight(.bold)
                     }
                 }
-                
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {

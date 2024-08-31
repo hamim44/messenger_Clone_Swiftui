@@ -50,7 +50,7 @@ struct LogInView: View {
                 .frame(maxWidth: .infinity,alignment: .trailing)
                 
                 Button {
-                   InboxView()
+                   print("log in")
                 } label: {
                     Text("Log in")
                         .font(.subheadline)
