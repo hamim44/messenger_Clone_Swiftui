@@ -6,3 +6,25 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseAuth
+import Combine
+
+class ContainViewModel: ObservableObject {
+    
+    @Published var userSession: FirebaseAuth.User?
+    
+    private var cancelables = Set<AnyCancellable>()
+    
+    init() {
+        Task { await setupSubcription() }
+    }
+    
+    @MainActor
+    func setupSubcription() {
+        AuthService.shared.$userSession.sink { [weak self] userSessiontoAuth in
+            self?.userSession = userSessiontoAuth
+        }.store(in: &cancelables)
+    }
+    
+}

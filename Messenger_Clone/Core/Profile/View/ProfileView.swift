@@ -49,9 +49,8 @@ struct ProfileView: View {
                 
                 Section {
                     Button("Log Out",role: .destructive) {
-                        
+                        AuthService.shared.signOut()
                     }
-                    
                     Button("Delete Account",role: .destructive) {
                         
                     }

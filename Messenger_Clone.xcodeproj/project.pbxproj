@@ -28,6 +28,10 @@
 		92C06C2D2C831E5700C7B827 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 92C06C2C2C831E5700C7B827 /* FirebaseAuth */; };
 		92C06C2F2C831E5700C7B827 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 92C06C2E2C831E5700C7B827 /* FirebaseFirestore */; };
 		92C06C312C831E5700C7B827 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 92C06C302C831E5700C7B827 /* FirebaseStorage */; };
+		92C06C352C83206600C7B827 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06C342C83206600C7B827 /* LoginViewModel.swift */; };
+		92C06C372C83207A00C7B827 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06C362C83207A00C7B827 /* RegistrationViewModel.swift */; };
+		92C06C392C8321B100C7B827 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06C382C8321B100C7B827 /* AuthService.swift */; };
+		92C06C3D2C83584500C7B827 /* ContainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C06C3C2C83584500C7B827 /* ContainViewModel.swift */; };
 		92D1F1A52C810A1900D7845D /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D1F1A42C810A1900D7845D /* RegistrationView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +55,10 @@
 		929ACD222C80F2AC00A5A74D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		929ACD312C80F57900A5A74D /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		92C06C292C831D4600C7B827 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		92C06C342C83206600C7B827 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		92C06C362C83207A00C7B827 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		92C06C382C8321B100C7B827 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		92C06C3C2C83584500C7B827 /* ContainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainViewModel.swift; sourceTree = "<group>"; };
 		92D1F1A42C810A1900D7845D /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,7 +170,6 @@
 				929ACD2C2C80F4B100A5A74D /* Core */,
 				929ACD2A2C80F4AD00A5A74D /* Extensions */,
 				929ACD292C80F4AB00A5A74D /* Model */,
-				929ACD2E2C80F4E900A5A74D /* New Group */,
 				929ACD212C80F2AC00A5A74D /* Preview Content */,
 				929ACD2B2C80F4B000A5A74D /* Service */,
 			);
@@ -222,16 +229,11 @@
 			path = App;
 			sourceTree = "<group>";
 		};
-		929ACD2E2C80F4E900A5A74D /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		929ACD2F2C80F51B00A5A74D /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
+				92C06C332C83204D00C7B827 /* Service */,
+				92C06C322C83203900C7B827 /* ViewModel */,
 				929ACD332C80F57C00A5A74D /* View */,
 			);
 			path = Authentication;
@@ -240,7 +242,8 @@
 		929ACD302C80F52D00A5A74D /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				929ACD1D2C80F2AB00A5A74D /* ContentView.swift */,
+				92C06C3B2C83582F00C7B827 /* ViewModel */,
+				92C06C3A2C83581E00C7B827 /* View */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -252,6 +255,39 @@
 				92D1F1A42C810A1900D7845D /* RegistrationView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		92C06C322C83203900C7B827 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92C06C342C83206600C7B827 /* LoginViewModel.swift */,
+				92C06C362C83207A00C7B827 /* RegistrationViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		92C06C332C83204D00C7B827 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				92C06C382C8321B100C7B827 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		92C06C3A2C83581E00C7B827 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				929ACD1D2C80F2AB00A5A74D /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		92C06C3B2C83582F00C7B827 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				92C06C3C2C83584500C7B827 /* ContainViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -334,15 +370,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				92210E762C8207450069346A /* SettingOptionViewModel.swift in Sources */,
+				92C06C3D2C83584500C7B827 /* ContainViewModel.swift in Sources */,
+				92C06C372C83207A00C7B827 /* RegistrationViewModel.swift in Sources */,
 				92210E6C2C81D0330069346A /* InboxRowView.swift in Sources */,
 				92210E742C8200F10069346A /* ProfileView.swift in Sources */,
 				92210E6F2C81DD970069346A /* NewMessageView.swift in Sources */,
 				92210E802C825CA80069346A /* ChatView.swift in Sources */,
+				92C06C392C8321B100C7B827 /* AuthService.swift in Sources */,
 				929ACD322C80F57900A5A74D /* LogInView.swift in Sources */,
 				9225BCDB2C8301CD007E5A07 /* ChatMessageCell.swift in Sources */,
 				9225BCDD2C8307FC007E5A07 /* ChatBubble.swift in Sources */,
 				929ACD1E2C80F2AB00A5A74D /* ContentView.swift in Sources */,
 				92210E6A2C81A0910069346A /* ActiveNow.swift in Sources */,
+				92C06C352C83206600C7B827 /* LoginViewModel.swift in Sources */,
 				92210E7D2C8252D70069346A /* CircularprofileView.swift in Sources */,
 				92210E782C8211610069346A /* ProfileViewModel.swift in Sources */,
 				92210E7A2C82402C0069346A /* User.swift in Sources */,
