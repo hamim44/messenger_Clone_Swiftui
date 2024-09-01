@@ -54,7 +54,6 @@ struct ProfileView: View {
                     Button("Delete Account",role: .destructive) {
                         
                     }
-                    
                 }
             }
         }

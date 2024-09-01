@@ -10,6 +10,7 @@ import Firebase
 import FirebaseAuth
 import Combine
 
+@MainActor
 class ContainViewModel: ObservableObject {
     
     @Published var userSession: FirebaseAuth.User?
@@ -19,6 +20,7 @@ class ContainViewModel: ObservableObject {
     init() {
         Task { setupSubcription() }
     }
+    
     
     func setupSubcription() {
         AuthService.shared.$userSession.sink { [weak self] userSessiontoAuth in
