@@ -17,10 +17,9 @@ class ContainViewModel: ObservableObject {
     private var cancelables = Set<AnyCancellable>()
     
     init() {
-        Task { await setupSubcription() }
+        Task { setupSubcription() }
     }
     
-    @MainActor
     func setupSubcription() {
         AuthService.shared.$userSession.sink { [weak self] userSessiontoAuth in
             self?.userSession = userSessiontoAuth
