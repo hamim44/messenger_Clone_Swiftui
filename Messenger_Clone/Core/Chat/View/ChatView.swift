@@ -34,11 +34,11 @@ struct ChatView: View {
                         
                     }
                 }
-                
-                ForEach(ChatViewModel.messages) { message in
-                    ChatMessageCell(message: message)
+                LazyVStack{
+                    ForEach(ChatViewModel.messages) { message in
+                        ChatMessageCell(message: message)
                         
-                    
+                    }
                 }
             }
             Spacer()
@@ -48,6 +48,7 @@ struct ChatView: View {
                     .padding(.trailing, 72)
                     .background(Color(.systemGroupedBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 25))
+                    .padding(.horizontal,12)
                 
                 
                 Button {
@@ -64,13 +65,13 @@ struct ChatView: View {
                             .frame(width: 24, height: 24)
                     }
                     .autocorrectionDisabled()
-                    
-                    
+
                 }
-                
                 .padding()
                 
             }
+            .navigationTitle(user.fullName)
+            .navigationBarTitleDisplayMode(.inline)
             .padding(.vertical,5)
            
         }

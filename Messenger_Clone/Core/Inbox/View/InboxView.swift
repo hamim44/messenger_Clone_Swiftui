@@ -12,7 +12,7 @@ struct InboxView: View {
     @StateObject var inboxViewModel = InboxViewModel()
     @State private var selectedUser: User?
     @State private var showChat = false
-
+    
     
     private var user: User?{
         return inboxViewModel.currentUser
@@ -20,23 +20,25 @@ struct InboxView: View {
     
     var body: some View {
         NavigationStack {
-                List {
-                    ActiveNow()
-                        .listRowSeparator(.hidden)
-                        .listRowInsets(EdgeInsets())
-                        .padding(.vertical)
-                        .padding(.horizontal,4)
-                    ForEach(inboxViewModel.recentMessage) {
-                        message in
-                        
-                        ZStack {
-                            NavigationLink(value: message) {
-                                EmptyView()
-                            }.opacity(0.0)
-                            InboxRowView(message: message)
-                        }
+            List {
+                ActiveNow()
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                    .padding(.horizontal,4)
+                ForEach(inboxViewModel.recentMessage) {
+                    message in
+                    
+                    ZStack {
+                        NavigationLink(value: message) {
+                            EmptyView()
+                        }.opacity(0.0)
+                        InboxRowView(message: message)
                     }
                 }
+            }
+            .navigationTitle("Chats")
+            .navigationBarTitleDisplayMode(.inline)
             .listStyle(PlainListStyle())
             .onChange(of: selectedUser, {oldvalue ,newvalue in
                 showChat = newvalue != nil
@@ -51,8 +53,13 @@ struct InboxView: View {
                     ChatView(user: user)
                 }
             })
-            .navigationDestination(for: User.self, destination: { user in
-                ProfileView(user: user)
+            .navigationDestination(for: Route.self, destination: { route in
+                switch route {
+                case .ProfileView(let user):
+                    ProfileView(user: user)
+                case .ChatView(let user):
+                    ChatView(user: user)
+                }
             })
             .fullScreenCover(isPresented: $showNewMessageView, content: {
                 NewMessageView(selecteduser: $selectedUser)
@@ -60,8 +67,10 @@ struct InboxView: View {
             .toolbar{
                 ToolbarItem(placement: .topBarLeading) {
                     HStack(spacing: 4) {
-                        NavigationLink(value: user) {
-                            CircularprofileView(user: user, size: .xSmall)
+                        if let user {
+                            NavigationLink(value: Route.ProfileView(user)) {
+                                CircularprofileView(user: user, size: .xSmall)
+                            }
                         }
                         
                         Text("Chats")
@@ -81,7 +90,7 @@ struct InboxView: View {
                             .foregroundStyle(.black,Color(.systemGray5))
                     }
                     
-                        
+                    
                 }
             }
         }
