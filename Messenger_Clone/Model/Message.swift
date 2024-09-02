@@ -31,4 +31,8 @@ struct Message: Identifiable,Hashable,Codable {
         return fromId ==  Auth.auth().currentUser?.uid 
     }
     
+    var timestampString:String {
+        return timestamp.dateValue().timestampString()
+    }
+    
 }

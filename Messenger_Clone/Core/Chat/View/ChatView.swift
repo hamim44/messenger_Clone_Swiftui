@@ -51,7 +51,7 @@ struct ChatView: View {
                 
                 
                 Button {
-                    ChatViewModel.messageText()
+                    ChatViewModel.sendMessgae()
                     ChatViewModel.massageText = ""
                 } label: {
                     HStack(spacing: 5) {

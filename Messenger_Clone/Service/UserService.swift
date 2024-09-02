@@ -32,4 +32,12 @@ class UserService {
         return users
     }
     
+    static func fatchData(withId uid:String, Completion: @escaping(User)-> Void){
+        FirebaseConstants.usercollaction.document(uid).getDocument { snapshot, _ in
+            guard let user = try? snapshot?.data(as: User.self) else { return }
+            Completion(user)
+        }
+       
+    }
+    
 }
