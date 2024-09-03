@@ -42,4 +42,11 @@ class UserService {
        
     }
     
+    func updateUserProfileImage(_ imageUrl: String) async throws {
+        guard let uid = Auth.auth().currentUser?.uid else { return }
+        
+      try await FirebaseConstants.usercollaction.document(uid).updateData([
+            "profileImageUrl": imageUrl
+        ])
+    }
 }

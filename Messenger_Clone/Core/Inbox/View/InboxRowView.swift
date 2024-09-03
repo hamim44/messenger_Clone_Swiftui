@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct InboxRowView: View {
+    @ObservedObject var ViewModel: InboxViewModel
     let message :  Message
     var body: some View {
         HStack(alignment: .top,spacing: 12) {
-    
-            CircularprofileView(user: message.user, size: .large)
+                CircularprofileView(user: message.user, size: .large)
             VStack(alignment:.leading,spacing: 4){
                 Text(message.user?.fullName ?? "")
                     .font(.subheadline)
@@ -34,7 +34,21 @@ struct InboxRowView: View {
             .foregroundStyle(.gray)
 
         }
-        .frame(height: 72)
+        .swipeActions{
+            Button {
+                onDelete()
+            } label: {
+                Image(systemName: "trash")
+            }
+            .tint(Color(.systemRed))
+
+        }
+    }
+}
+
+private extension InboxRowView {
+    func onDelete() {
+        Task { await ViewModel.deleteRecentMessages(message)}
     }
 }
 

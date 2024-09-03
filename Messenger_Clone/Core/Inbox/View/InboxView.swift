@@ -33,7 +33,7 @@ struct InboxView: View {
                         NavigationLink(value: message) {
                             EmptyView()
                         }.opacity(0.0)
-                        InboxRowView(message: message)
+                        InboxRowView(ViewModel: inboxViewModel, message: message)
                     }
                 }
             }

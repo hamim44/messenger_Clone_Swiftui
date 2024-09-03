@@ -10,6 +10,7 @@ import SwiftUI
 import PhotosUI
 
 
+@MainActor
 class ProfileViewModel:ObservableObject {
     
     @Published var selectedItem: PhotosPickerItem? {
@@ -23,8 +24,12 @@ class ProfileViewModel:ObservableObject {
         guard let imageData = try await item.loadTransferable(type: Data.self) else  { return }
         guard let uiImage = UIImage(data: imageData) else { return }
         self.profileImage = Image(uiImage: uiImage)
-    
+        
+        guard let imageUrl = try await ImageUploader().uploadImage(uiImage) else { return }
+        
+        try await UserService.shared.updateUserProfileImage(imageUrl)
+        
     }
- 
+    
     
 }

@@ -27,8 +27,7 @@ struct ChatMessageCell: View {
                 
             } else {
                 HStack(alignment: .bottom,spacing: 4) {
-                    CircularprofileView(user: User.MockUser, size: .xxSmall)
-                    
+                    CircularprofileView(user: message.user, size: .xxSmall)
                     Text(message.messageText)
                         .font(.subheadline)
                         .padding(12)
